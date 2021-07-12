@@ -6,12 +6,10 @@ export const getTasks = async(callback) => {
   callback(data);
 }
 
-export const updateTask = async(uuid, callback) => {
-  const response = await fetch(
+export const updateTask = async(uuid) => {
+  await fetch(
     `${server}/tasks/${uuid}`, {
       method: 'PUT',
     }
   );
-  const data = await response.json(); 
-  callback(data);
 }
